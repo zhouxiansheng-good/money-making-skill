@@ -1,6 +1,6 @@
 ---
 name: 赚钱决策Skill
-description: "基于Naval财富框架+AI杠杆的赚钱决策操作系统。帮助系统化地识别、评估和执行赚钱机会。"
+description: "赚钱决策Skill — 基于Naval财富框架+AI杠杆的赚钱决策操作系统。当用户说'使用赚钱skill'/'赚钱决策'/'评估机会'/'怎么赚钱'时激活。"
 metadata:
   version: "2.0.0"
   framework: "Naval + AI Leverage + MVP + QClaw Automation"
@@ -8,11 +8,11 @@ metadata:
 
 # 赚钱决策Skill
 
+<!-- L1:START -->
+触发条件：用户说"使用赚钱skill"/"赚钱决策"/"评估机会"/"这个值得做吗"/"怎么赚钱"/"赚钱分析"/"自动化赚钱"/"龙虾赚钱"时激活。
+<!-- L1:END -->
+
 > **财富 = 特定知识 × 杠杆 × 判断力 × 责任感** — Naval Ravikant
-
-## 触发条件
-
-当用户说"赚钱决策"/"评估机会"/"这个值得做吗"/"怎么赚钱"/"赚钱分析"/"自动化赚钱"/"龙虾赚钱"时激活。
 
 ## 核心架构
 
