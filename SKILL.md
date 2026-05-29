@@ -18,7 +18,7 @@ metadata:
 
 ```
 ┌─────────────────────────────────────────┐
-│        赚钱决策Skill 五层架构 v2.0       │
+│        赚钱决策Skill 五层架构 v3.0       │
 ├─────────────────────────────────────────┤
 │  Layer 1: 思维层（Naval框架）            │
 │  ├─ 特定知识发现器                       │
@@ -30,13 +30,17 @@ metadata:
 │  ├─ 机会扫描器                          │
 │  ├─ 非对称回报检查                       │
 │  ├─ 特定知识匹配                        │
+│  ├─ 法律风险审查器（六维矩阵）            │
+│  ├─ 市场可行性验证器（竞品+需求+平台）     │
+│  ├─ 二阶思维检查                        │
 │  └─ 红线过滤器                          │
 │                                         │
 │  Layer 3: 杠杆层（AI放大器）              │
 │  ├─ 代码杠杆引擎                        │
 │  ├─ 媒体杠杆引擎                        │
 │  ├─ 自动化引擎（QClaw/Agent驱动）        │
-│  └─ 杠杆叠加器                          │
+│  ├─ 杠杆叠加器                          │
+│  └─ 平台规则速查表                       │
 │                                         │
 │  Layer 4: 行动层（MVP验证循环）           │
 │  ├─ MVP设计器                           │
@@ -88,16 +92,22 @@ Layer 5: 自动化层（MVP验证通过后）
 输出: Go/NoGo决策 + 杠杆策略 + 行动路径 + MVP计划 + 自动化配置
 ```
 
-## 红线规则
+## 红线规则（v3.0增强）
 
 以下情况直接NoGo，不进入评估：
 
-| 红线 | 检查内容 |
-|------|----------|
-| 合法合规 | 是否涉及法律灰色地带？ |
-| 时间可控 | 每天投入是否超过2小时？ |
-| 资金可控 | 启动资金是否超过500元？ |
-| 非纯卖劳 | 是否纯时间换钱、无可规模化空间？ |
+| 红线 | 检查内容 | 审查工具 |
+|------|----------|----------|
+| 合法合规 | 六维法律风险矩阵是否通过？ | `templates/legal_risk_card.md` |
+| 市场可行 | 市场可行性验证（竞品+需求+平台）是否通过？ | `templates/feasibility_check_card.md` |
+| 时间可控 | 每天投入是否超过2小时？ | — |
+| 资金可控 | 启动资金是否超过500元？ | — |
+| 非纯卖劳 | 是否纯时间换钱、无可规模化空间？ | — |
+
+**新增强制检查**：
+- 所有收益估算必须标注数据来源（实测/同行/估算）
+- 所有方案必须通过二阶思维检查（成功后的连锁反应+失败后的退出成本）
+- 涉及平台运营必须查询 `guides/platform_rules_guide.md`
 
 ## 杠杆层级参考
 
@@ -113,11 +123,14 @@ Layer 5: 自动化层（MVP验证通过后）
 | 层级 | 内容 | 路径 |
 |------|------|------|
 | L1 | 思维层组件 | `components/01-think/SKILL.md` |
-| L1 | 评估层组件 | `components/02-evaluate/SKILL.md` |
-| L1 | 杠杆层组件 | `components/03-leverage/SKILL.md` |
+| L1 | 评估层组件（含法律风险+市场可行性） | `components/02-evaluate/SKILL.md` |
+| L1 | 杠杆层组件（含平台规则速查） | `components/03-leverage/SKILL.md` |
 | L1 | 行动层组件 | `components/04-act/SKILL.md` |
 | L2 | 模板 | `templates/` |
 | L2 | 指南 | `guides/` |
+| L2 | 法律风险评估卡 | `templates/legal_risk_card.md` |
+| L2 | 市场可行性验证卡 | `templates/feasibility_check_card.md` |
+| L2 | 平台规则速查指南 | `guides/platform_rules_guide.md` |
 | L2 | QClaw自动化模板 | `templates/qclaw_automation_template.md` |
 | L2 | QClaw内容自动化模板 | `templates/qclaw_content_automation.md` |
 
